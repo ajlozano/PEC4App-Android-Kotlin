@@ -6,6 +6,7 @@
     <application
         android:label="PAC3App"
         android:theme="@style/AppTheme"
+        android:supportsRtl="true"
         tools:targetApi="33">
         <activity
             android:name=".SplashActivity"
@@ -18,7 +19,15 @@
         </activity>
         <activity
             android:name=".MainActivity"
-            android:theme="@style/AppTheme"/>
+            android:theme="@style/MainTheme" />
+        <activity
+            android:name=".MapsActivity"
+            android:theme="@style/MapsTheme" />
+        <activity
+            android:name=".MuseumsActivity"
+            android:theme="@style/MuseumsTheme"
+            android:configChanges="orientation"
+            android:screenOrientation="portrait"/>
     </application>
 
 </manifest>

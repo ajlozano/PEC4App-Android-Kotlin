@@ -10,7 +10,6 @@ import androidx.core.os.postDelayed
 class SplashActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
         Handler(Looper.myLooper()!!).postDelayed({ // This method will be executed once the timer is over
             val intent = Intent(this, MainActivity::class.java)
             startActivity(intent)
