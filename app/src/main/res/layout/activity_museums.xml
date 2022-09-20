@@ -11,6 +11,17 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         tools:context=".MuseumsActivity">
+
+        <ProgressBar
+            android:id="@+id/museum_progress"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:max="100"
+            android:scaleX="0.8"
+            android:scaleY="0.8"
+            android:indeterminateTint="@color/yellow">
+        </ProgressBar>
+
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/museum_recycler"
             android:layout_width="match_parent"
