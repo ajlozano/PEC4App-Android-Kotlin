@@ -89,8 +89,8 @@
                                 android:adjustViewBounds="true"
                                 android:padding="8dp"
                                 android:scaleType="centerInside"
-                                app:tint="@color/white"
-                                android:src="@drawable/museum" />
+                                android:src="@drawable/museum"
+                                app:tint="@color/white" />
 
                             <TextView
                                 android:layout_width="wrap_content"
@@ -133,8 +133,8 @@
                                 android:adjustViewBounds="true"
                                 android:padding="8dp"
                                 android:scaleType="centerInside"
-                                app:tint="@color/white"
-                                android:src="@drawable/personal" />
+                                android:src="@drawable/personal"
+                                app:tint="@color/white" />
 
                             <TextView
                                 android:layout_width="wrap_content"
