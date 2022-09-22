@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">PEC4App</string>
+    <string name="title_activity_google_maps">GoogleMapsActivity</string>
 </resources>

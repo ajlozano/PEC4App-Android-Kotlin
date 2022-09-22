@@ -12,7 +12,7 @@ class MainActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         binding.rellayMaps.setOnClickListener { _ ->
-            val intent = Intent(this, MapsActivity::class.java)
+            val intent = Intent(this, GoogleMapsActivity::class.java)
             startActivity(intent)
         }
         binding.rellayMuseums.setOnClickListener { _ ->

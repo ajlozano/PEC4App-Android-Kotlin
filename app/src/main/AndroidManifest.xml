@@ -4,12 +4,23 @@
     package="edu.uoc.android">
 
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
 
     <application
         android:label="PAC3App"
-        android:theme="@style/AppTheme"
         android:supportsRtl="true"
+        android:theme="@style/AppTheme"
         tools:targetApi="33">
+
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="AIzaSyCR2a6aCCC3mVz5pvZo5KLX97bApIlr0wk" />
+
+        <activity
+            android:name=".GoogleMapsActivity"
+            android:exported="false"
+            android:label="@string/title_activity_google_maps" />
         <activity
             android:name=".SplashActivity"
             android:exported="true"
@@ -27,9 +38,10 @@
             android:theme="@style/MapsTheme" />
         <activity
             android:name=".MuseumsActivity"
-            android:theme="@style/MuseumsTheme"
             android:configChanges="orientation"
-            android:screenOrientation="portrait"/>
+            android:screenOrientation="portrait"
+            android:theme="@style/MuseumsTheme" />
+
     </application>
 
 </manifest>
