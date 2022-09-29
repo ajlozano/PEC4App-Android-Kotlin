@@ -1,7 +1,5 @@
 package edu.uoc.android
 
-import android.graphics.drawable.Drawable
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -12,10 +10,8 @@ import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import edu.uoc.android.models.Element
 import com.squareup.picasso.Picasso
-import kotlin.math.log
 
-
-class museumsAdapter : ListAdapter<Element, museumsAdapter.MuseumsViewHolder>(DiffCallback) {
+class MuseumsAdapter : ListAdapter<Element, MuseumsAdapter.MuseumsViewHolder>(DiffCallback) {
 
     companion object DiffCallback : DiffUtil.ItemCallback<Element>() {
         override fun areItemsTheSame(oldItem: Element, newItem: Element): Boolean {

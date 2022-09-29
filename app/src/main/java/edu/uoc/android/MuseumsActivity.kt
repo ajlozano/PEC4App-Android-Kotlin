@@ -28,7 +28,7 @@ class MuseumsActivity : AppCompatActivity() {
                 if (response.code() == 200) {
                     showProgress(false, binding)
                     val museums = response.body()!!
-                    val adapter = museumsAdapter()
+                    val adapter = MuseumsAdapter()
                     binding.museumRecycler.adapter = adapter
                     adapter.submitList(museums.elements)
                 }

@@ -19,5 +19,9 @@ class MainActivity : AppCompatActivity() {
             val intent = Intent(this, MuseumsActivity::class.java)
             startActivity(intent)
         }
+        binding.rellayQuizzes.setOnClickListener { _ ->
+            val intent = Intent(this, QuizzActivity::class.java)
+            startActivity(intent)
+        }
     }
 }
