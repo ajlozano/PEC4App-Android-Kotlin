@@ -18,4 +18,14 @@
         <item name="colorPrimaryDark">@color/yellow_dark</item>
         <item name="colorAccent">@color/yellow</item>
     </style>
+    <style name="QuizzTheme" parent="Theme.AppCompat.Light">
+        <item name="colorPrimary">@color/green</item>
+        <item name="colorPrimaryDark">@color/green_dark</item>
+        <item name="colorAccent">@color/green</item>
+    </style>
+    <style name="SettingsTheme" parent="Theme.AppCompat.Light">
+        <item name="colorPrimary">@color/violet</item>
+        <item name="colorPrimaryDark">@color/violet_dark</item>
+        <item name="colorAccent">@color/violet</item>
+    </style>
 </resources>

@@ -5,24 +5,18 @@
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-feature android:name="android.hardware.camera" android:required="true" />
 
     <application
         android:label="PAC4App"
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:targetApi="33">
-        <activity
-            android:name=".QuizzActivity"
-            android:exported="false" />
 
         <meta-data
             android:name="com.google.android.geo.API_KEY"
             android:value="AIzaSyCR2a6aCCC3mVz5pvZo5KLX97bApIlr0wk" />
 
-        <activity
-            android:name=".GoogleMapsActivity"
-            android:exported="false"
-            android:label="@string/title_activity_google_maps" />
         <activity
             android:name=".SplashActivity"
             android:exported="true"
@@ -37,13 +31,24 @@
             android:name=".MainActivity"
             android:theme="@style/MainTheme" />
         <activity
-            android:name=".MapsActivity"
-            android:theme="@style/MapsTheme" />
-        <activity
             android:name=".MuseumsActivity"
             android:configChanges="orientation"
             android:screenOrientation="portrait"
             android:theme="@style/MuseumsTheme" />
+        <activity
+            android:name=".QuizzActivity"
+            android:theme="@style/QuizzTheme" />
+        <activity
+            android:name=".GoogleMapsActivity"
+            android:label="@string/title_activity_google_maps"
+            android:theme="@style/MapsTheme" />
+        <activity
+            android:name=".SettingsActivity"
+            android:theme="@style/SettingsTheme">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
     </application>
 
 </manifest>

@@ -11,16 +11,20 @@ class MainActivity : AppCompatActivity() {
         val binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        binding.rellayMaps.setOnClickListener { _ ->
+        binding.rellayMaps.setOnClickListener {
             val intent = Intent(this, GoogleMapsActivity::class.java)
             startActivity(intent)
         }
-        binding.rellayMuseums.setOnClickListener { _ ->
+        binding.rellayMuseums.setOnClickListener {
             val intent = Intent(this, MuseumsActivity::class.java)
             startActivity(intent)
         }
-        binding.rellayQuizzes.setOnClickListener { _ ->
+        binding.rellayQuizzes.setOnClickListener {
             val intent = Intent(this, QuizzActivity::class.java)
+            startActivity(intent)
+        }
+        binding.rellaySettings.setOnClickListener {
+            val intent = Intent(this, SettingsActivity::class.java)
             startActivity(intent)
         }
     }
