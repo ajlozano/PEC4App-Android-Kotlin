@@ -228,7 +228,7 @@
                     </RelativeLayout>
 
                     <RelativeLayout
-                        android:id="@+id/rellay_help"
+                        android:id="@+id/rellay_fakebot"
                         android:layout_width="match_parent"
                         android:layout_weight="0.5"
                         android:layout_height="match_parent"
@@ -257,7 +257,7 @@
                                 android:layout_height="wrap_content"
                                 android:layout_below="@+id/imgHelp"
                                 android:layout_centerHorizontal="true"
-                                android:text="Help"
+                                android:text="Fake Bot"
                                 android:textSize="20sp" />
 
                         </RelativeLayout>

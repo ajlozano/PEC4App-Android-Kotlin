@@ -27,5 +27,9 @@ class MainActivity : AppCompatActivity() {
             val intent = Intent(this, SettingsActivity::class.java)
             startActivity(intent)
         }
+        binding.rellayFakebot.setOnClickListener {
+            val intent = Intent(this, FakeBotActivity::class.java)
+            startActivity(intent)
+        }
     }
 }

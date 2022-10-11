@@ -5,13 +5,17 @@
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
-    <uses-feature android:name="android.hardware.camera" android:required="true" />
+
+    <uses-feature
+        android:name="android.hardware.camera"
+        android:required="true" />
 
     <application
         android:label="PAC4App"
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:targetApi="33">
+
 
         <meta-data
             android:name="com.google.android.geo.API_KEY"
@@ -43,12 +47,17 @@
             android:label="@string/title_activity_google_maps"
             android:theme="@style/MapsTheme" />
         <activity
+            android:name=".FakeBotActivity"
+            android:theme="@style/FakeBotTheme"
+            android:exported="false"/>
+        <activity
             android:name=".SettingsActivity"
             android:theme="@style/SettingsTheme">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
+
 
         <provider
             android:name="androidx.core.content.FileProvider"
@@ -57,7 +66,7 @@
             android:grantUriPermissions="true">
             <meta-data
                 android:name="android.support.FILE_PROVIDER_PATHS"
-                android:resource="@xml/provider_paths"/>
+                android:resource="@xml/provider_paths" />
         </provider>
     </application>
 
