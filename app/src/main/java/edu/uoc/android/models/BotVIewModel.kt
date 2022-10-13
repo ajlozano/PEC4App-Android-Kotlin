@@ -1,9 +1,11 @@
 package edu.uoc.android.models
 
+import android.os.Handler
+import android.os.Looper
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import java.util.Random
+
 
 class BotVIewModel : ViewModel() {
     private val answers =  listOf<String>(
@@ -34,11 +36,14 @@ class BotVIewModel : ViewModel() {
             return false
         _questions.value = question
         _fakeAnswers.value = answers.random()
+
         return true
     }
 
     fun addTestChat(question: String, answer: String) {
         _questions.value = question
         _fakeAnswers.value = answer
+
+
     }
 }
