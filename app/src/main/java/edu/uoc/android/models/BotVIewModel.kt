@@ -5,10 +5,11 @@ import android.os.Looper
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import java.util.*
 
 
 class BotVIewModel : ViewModel() {
-    private val answers =  listOf<String>(
+    private val answers =  listOf(
         "Si",
         "No",
         "Pregunta de nuevo",
@@ -18,32 +19,33 @@ class BotVIewModel : ViewModel() {
         "Quén te crees que eres?"
     )
 
-    private val _fakeAnswers = MutableLiveData<String>()
-    val fakeAnswers: LiveData<String>
-        get() = _fakeAnswers
+    private val _chatMessageListLiveData = MutableLiveData<MutableList<ChatMessage>>()
+    val chatMessageListLiveData: LiveData<MutableList<ChatMessage>>
+        get() = _chatMessageListLiveData
 
-    private val _questions = MutableLiveData<String>()
-    val questions: LiveData<String>
-        get() = _questions
+    private var handler: Handler = Handler()
 
     init{
-        _questions.value = ""
-        _fakeAnswers.value = ""
+        _chatMessageListLiveData.value = mutableListOf()
     }
 
-    fun addChat(question: String) : Boolean{
-        if(question.isEmpty())
-            return false
-        _questions.value = question
-        _fakeAnswers.value = answers.random()
-
-        return true
+    fun addMessage(chatMessage: ChatMessage)
+    {
+        val mutableList = _chatMessageListLiveData.value!!
+        mutableList.add(chatMessage)
+        _chatMessageListLiveData.value = mutableList
     }
 
-    fun addTestChat(question: String, answer: String) {
-        _questions.value = question
-        _fakeAnswers.value = answer
+    fun createResponse() {
+        val runnable = Runnable {
+            val random = Random().nextInt(answers.size)
+            val answer = answers[random]
+            val chatMessage = ChatMessage(System.currentTimeMillis(), answer, false)
+            val mutableList = _chatMessageListLiveData.value!!
+            mutableList.add(chatMessage)
+            _chatMessageListLiveData.value = mutableList
+        }
 
-
+        handler.postDelayed(runnable, 2000)
     }
 }
