@@ -3,23 +3,42 @@ package edu.uoc.android.models
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import java.util.Random
 
 class BotVIewModel : ViewModel() {
-    private val _fakeAnswers = MutableLiveData<ArrayList<String>>()
-    val fakeAnswers: LiveData<ArrayList<String>>
+    private val answers =  listOf<String>(
+        "Si",
+        "No",
+        "Pregunta de nuevo",
+        "Es muy probable",
+        "Tal vez",
+        "Estás flipando!",
+        "Quén te crees que eres?"
+    )
+
+    private val _fakeAnswers = MutableLiveData<String>()
+    val fakeAnswers: LiveData<String>
         get() = _fakeAnswers
 
+    private val _questions = MutableLiveData<String>()
+    val questions: LiveData<String>
+        get() = _questions
+
     init{
-        loadFakeAnswers()
+        _questions.value = ""
+        _fakeAnswers.value = ""
     }
 
-    fun loadFakeAnswers(){
-        _fakeAnswers.value?.add("Si")
-        _fakeAnswers.value?.add("No")
-        _fakeAnswers.value?.add("Pregunta de nuevo")
-        _fakeAnswers.value?.add("Es muy probable")
-        _fakeAnswers.value?.add("Tal vez")
-        _fakeAnswers.value?.add("Estças flipando")
-        _fakeAnswers.value?.add("Quien te crees que eres?")
+    fun addChat(question: String) : Boolean{
+        if(question.isEmpty())
+            return false
+        _questions.value = question
+        _fakeAnswers.value = answers.random()
+        return true
+    }
+
+    fun addTestChat(question: String, answer: String) {
+        _questions.value = question
+        _fakeAnswers.value = answer
     }
 }

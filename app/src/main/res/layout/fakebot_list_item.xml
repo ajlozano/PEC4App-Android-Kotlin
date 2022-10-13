@@ -6,22 +6,26 @@
     android:orientation="vertical">
 
     <TextView
-        android:id="@+id/text_question"
+        android:id="@+id/fb_text_question"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="50dp"
-        android:textAlignment="textStart"
+        android:paddingEnd="10dp"
+        android:paddingVertical="10dp"
+        android:textAlignment="textEnd"
         android:textSize="20dp"
         android:textColor="@color/black"
         android:background="@color/green"
         android:text="Pregunta de prueba" />
     <TextView
-        android:id="@+id/text_answer"
+        android:id="@+id/fb_text_answer"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/text_question"
+        android:layout_below="@+id/fb_text_question"
         android:layout_marginTop="5dp"
         android:layout_marginEnd="50dp"
+        android:paddingStart="10dp"
+        android:paddingVertical="10dp"
         android:textAlignment="textStart"
         android:textSize="20dp"
         android:textColor="@color/black"
