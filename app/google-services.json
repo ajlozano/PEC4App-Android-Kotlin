@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "679135825074",
+    "project_id": "pec4app-fafcf",
+    "storage_bucket": "pec4app-fafcf.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:679135825074:android:012c0cc59b30edf7ad8dab",
+        "android_client_info": {
+          "package_name": "edu.uoc.android"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "679135825074-shegv32b5f3p5ub1a4slbg6ddoj43d3f.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAIiX5Fw12mJzzVhn5DpQI9ylDZKY9I_Sw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "679135825074-shegv32b5f3p5ub1a4slbg6ddoj43d3f.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
