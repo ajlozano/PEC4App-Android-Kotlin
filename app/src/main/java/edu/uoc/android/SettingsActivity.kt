@@ -13,12 +13,17 @@ import android.widget.Toast
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.FileProvider
+import com.google.firebase.analytics.FirebaseAnalytics
+import com.google.firebase.analytics.ktx.analytics
+import com.google.firebase.ktx.Firebase
 import edu.uoc.android.databinding.ActivitySettingsBinding
 import java.io.File
 
 const val FILENAME = "imageapp"
 
 class SettingsActivity : AppCompatActivity() {
+    private lateinit var analytics: FirebaseAnalytics
+
     private lateinit var imageView: ImageView
     private lateinit var textImage: TextView
     private var imageBitmap: Bitmap? = null
@@ -29,6 +34,10 @@ class SettingsActivity : AppCompatActivity() {
         if (success) {
             checkPicturePath()
             Toast.makeText(this, "Image saved!", Toast.LENGTH_SHORT).show()
+
+            val bundle = Bundle()
+            bundle.putString("ImageCaptured", "Image captured custom event")
+            SendCustomEvent(bundle)
         }
     }
 
@@ -37,6 +46,9 @@ class SettingsActivity : AppCompatActivity() {
         setContentView(R.layout.activity_settings)
         val binding = ActivitySettingsBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
+        // Obtain the FirebaseAnalytics instance.
+        analytics = Firebase.analytics
 
         imageView = binding.image
         textImage = binding.imageText
@@ -95,5 +107,11 @@ class SettingsActivity : AppCompatActivity() {
         val file = File.createTempFile(fileName, ".jpg", fileDirectory)
         picturePath = file.absolutePath
         return file
+    }
+
+    private fun SendCustomEvent(bundle: Bundle) {
+        // [START custom_event]
+        analytics.logEvent("Custom_Event", bundle)
+        // [END custom_event]
     }
 }
