@@ -10,6 +10,7 @@ PEC4App is an application developed for the UOC Android mastering. Using differe
 - MVVM
 - API request
 - Firebase
+- SQLite
 - Google Maps
 
 <p align="center">
